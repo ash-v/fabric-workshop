@@ -1,9 +1,6 @@
 This repo contains steps for conducting a simple Fabric workshop. User's should be able to follow along by following steps in this guide.
 
 
-# Architecture diagram
-To be added
-
 # Understand data 
 For this tutorial we will use World WIde Importers Dataset which is available within Fabric as one of the sample datasets. You can learn about this dataset [here](https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver17).
 
