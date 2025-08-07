@@ -115,24 +115,59 @@ with mlflow.start_run(run_name="rfc2_sm") as run:
 7. Train the model using LightGBM
 ```
 # lgbm_model
-mlflow.lightgbm.autolog(registered_model_name='lgbm_sm') # Register the trained model with autologging
-lgbm_sm_model = LGBMClassifier(learning_rate = 0.07, 
-                        max_delta_step = 2, 
-                        n_estimators = 100,
-                        max_depth = 10, 
-                        eval_metric = "logloss", 
-                        objective='binary', 
-                        random_state=42)
+from mlflow.models.signature import infer_signature
+# import pandas as pd
+
+# Ensure y_val is integer to match prediction type
+y_val = y_val.astype(int)
+y_res = y_res.astype(int)
+
+# Disable autologging for full control
+mlflow.lightgbm.autolog(disable=True)
+
+# Define model
+lgbm_sm_model = LGBMClassifier(
+    learning_rate=0.07, 
+    max_delta_step=2, 
+    n_estimators=100,
+    max_depth=10, 
+    eval_metric="logloss", 
+    objective='binary', 
+    random_state=42
+)
 
 with mlflow.start_run(run_name="lgbm_sm") as run:
-    lgbm1_sm_run_id = run.info.run_id # Capture run_id for model prediction later
-    # lgbm_sm_model.fit(X_train,y_train) # Imbalanced training data
-    lgbm_sm_model.fit(X_res, y_res.ravel()) # Balanced training data
+    lgbm1_sm_run_id = run.info.run_id  # capture run_id for later
+    
+    # Fit model
+    lgbm_sm_model.fit(X_res, y_res.ravel())
+
+    # Predictions on validation set
     y_pred = lgbm_sm_model.predict(X_val)
+    y_pred = y_pred.astype(int)  # ensure type consistency
+
+    # Metrics
     accuracy = accuracy_score(y_val, y_pred)
     cr_lgbm_sm = classification_report(y_val, y_pred)
     cm_lgbm_sm = confusion_matrix(y_val, y_pred)
     roc_auc_lgbm_sm = roc_auc_score(y_res, lgbm_sm_model.predict_proba(X_res)[:, 1])
+
+    # Log metrics
+    mlflow.log_metric("accuracy", accuracy)
+    mlflow.log_metric("roc_auc", roc_auc_lgbm_sm)
+    mlflow.log_text(cr_lgbm_sm, "classification_report.txt")
+    mlflow.log_text(str(cm_lgbm_sm.tolist()), "confusion_matrix.json")
+
+    # Infer clean signature
+    signature = infer_signature(X_val, y_pred)
+
+    # Log model with correct output type
+    mlflow.lightgbm.log_model(
+        lgbm_sm_model,
+        artifact_path="lgbm_sm",
+        signature=signature,
+        registered_model_name="lgbm_sm"
+    )
 ```
 8. Experiments artifact for tracking model performance - The experiment runs are automatically saved in the experiment artifact that can be found from the workspace. They're named based on the name used for setting the experiment. All of the trained machine learning models, their runs, performance metrics, and model parameters are logged.
 
