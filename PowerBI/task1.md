@@ -5,7 +5,7 @@
 4. Total Sales and Profit by Territory
 5. Total Sales Profit by Customer Category
 6. Total Sales by Buying Group
-7. Daily Sales & Profit trend line
+7. Profit trend line by BuyingGroup
 ![alt text](/PowerBI/images/SampleReport.png)
 
 ### Steps
@@ -52,5 +52,27 @@ Assuming Gold Zone Lakehouse is already created and loaded with [sample data](ht
     - Then, expand table "fact_Sales" and select columns "TotalExcludingTax" and "Profit"
     - Then, in visualization tab click on stacked vertical bar charts
     - Update label of Y-axis as described above to "Sales" and "Profit"
-    - Make corners rounded as described above
+    - Make corners rounded as described above. It should look like below
     ![alt text](/PowerBI/images/Reporting8.png)
+10. Add visual for "Total Sales by Buying Group"
+    - From table "dimension_customer", select column "BuyingGroup"
+    - Then, expand table "fact_Sales" and select columns "TotalExcludingTax"
+    - In visualization tab, select donut chart
+    - Rename Values from "Sum of TotalExcludingTax" to "Sales"
+    - Make corner rounded. Should look like below
+    ![alt text](/PowerBI/images/Reporting9.png)
+11. Add visual for "Profit trend line by BuyingGroup"
+    - From table "fact_Sales", select "invoiceDateKey" and "Profit"
+    - From table "dimension_customer", select column "BuyingGroup"
+    - Update Y-axis label to "Profit"
+    - Make corners rounded. Should look like below
+    ![alt text](/PowerBI/images/Reporting10.png)
+    As you can see the line graph is not very clear. We will add a filter to show only Top 3 Buying Groups
+    - Select the line graph, in Filters tab go to "BuyingGroup" and select "Top N" as filter type
+    - Enter "3" as value for Top N. And, drag "Profit" from "fact_Sales" table in to "By Value" field. Hit "Apply filter". Now, you see it looks a bit better and shows only top 3 buying groups by Profit.
+    ![alt text](/PowerBI/images/Reporting11.png)
+    - Save the report, by clicking on "File" on top left corner and entering name of the report as "rp_PowerBI_Tutorial"
+    ![alt text](/PowerBI/images/Reporting12.png)
+    ![alt text](/PowerBI/images/Reporting13.png)
+
+Next
