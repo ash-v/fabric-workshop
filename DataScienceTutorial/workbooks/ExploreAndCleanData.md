@@ -196,6 +196,8 @@ You'll use this data in the next notebook of this series.
 table_name = "df_clean"
 # Create Spark DataFrame from pandas
 sparkDF=spark.createDataFrame(df_clean_1) 
-sparkDF.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
+sparkDF.write.mode("overwrite").format("delta").save(f"Tables/dbo/{table_name}")
 print(f"Spark dataframe saved to delta table: {table_name}")
 ```
+
+Next, you can move on to [Train and register a machine learning model](/DataScienceTutorial/workbooks/TrainMLModel.md)

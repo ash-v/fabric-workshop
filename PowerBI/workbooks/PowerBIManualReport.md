@@ -1,3 +1,7 @@
+# Create a report in PowerBI
+
+In this section we will create a PowerBI report using data provided in a Lakehouse. Details about the report to be created are below and exact steps with screenshots follow.
+
 ## Financial Overview report
 1. Overall Sales
 2. Overall Profit
@@ -10,18 +14,8 @@
 
 ### Steps
 Assuming Gold Zone Lakehouse is already created and loaded with [sample data](https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver17).
-1. Go to Lakehouse "lh_gold_zone" click on "New Semantic Model" 
-![alt text](/PowerBI/images/SemanticModel1.png)
-2. On the pop-up window, fill in the name of semantic model as "sm_powerbi_tutorial". Select tables as shown in the screenshot below.. and hit "Confirm"
-![alt text](image.png)
-3. When Semantic Model opens up, make following connection by dragging and dropping
- - 3.1 Connect fact_sales table to dimentions_city on city_key by pressing down city_key on dimensions_city table and dragging to over to city_key column on fact_Sales_table. 
- ![alt text](/PowerBI/images/SemanticModel3.png)
- Following screen will appear when you do this... hit "Save"
- ![alt text](/PowerBI/images/SemanticModel4.png)
- - 3.2 Similarly, connect fact_Sales table with dimensions_customer
- ![alt text](/PowerBI/images/SemanticModel5.png)
-4. Now, semantic model is ready. Let's create a report on this model by going to "File">"Create new report". This should take you to blank report
+
+1. Now, semantic model is ready. Let's create a report on this model by going to you Semantic Model > "File">"Create new report". This should take you to blank report
 ![alt text](/PowerBI/images/Reporting1.png)
 5. Let's set background to light blue
 ![alt text](/PowerBI/images/Reporting2.png)
@@ -75,4 +69,4 @@ Assuming Gold Zone Lakehouse is already created and loaded with [sample data](ht
     ![alt text](/PowerBI/images/Reporting12.png)
     ![alt text](/PowerBI/images/Reporting13.png)
 
-Next
+Next, you can go to [Activator tutorial](/PowerBI/workbooks/Activator.md)

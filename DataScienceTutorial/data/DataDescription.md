@@ -20,3 +20,5 @@ These columns should have no influence on the decision of a customer to leave th
 The closure of a customer bank account defines the churn of that customer. The dataset exited column refers to customer's abandonment. Little context about these attributes is available, so you must proceed without background information about the dataset. Our goal is to understand how these attributes contribute to the exited status.
 
 The description is taken from [here](https://learn.microsoft.com/en-us/fabric/data-science/tutorial-data-science-ingest-data#bank-churn-data).
+
+Next, you can go to [Setup Lakehouse to store data and manually upload](/DataScienceTutorial/workbooks/LakehouseSetup.md) 
