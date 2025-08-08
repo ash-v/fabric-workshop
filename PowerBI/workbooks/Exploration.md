@@ -10,7 +10,7 @@ But first we need to create a semantic model. Let's start
 1. Go to Lakehouse "lh_gold_zone" click on "New Semantic Model" 
 ![alt text](/PowerBI/images/SemanticModel1.png)
 2. On the pop-up window, fill in the name of semantic model as "sm_powerbi_tutorial". Select tables as shown in the screenshot below.. and hit "Confirm"
-![alt text](image.png)
+![alt text](/PowerBI/images/SemanticModel2.png)
 3. When Semantic Model opens up, make following connection by dragging and dropping
  - 3.1 Connect fact_sales table to dimentions_city on city_key by pressing down city_key on dimensions_city table and dragging to over to city_key column on fact_Sales_table. 
  ![alt text](/PowerBI/images/SemanticModel3.png)

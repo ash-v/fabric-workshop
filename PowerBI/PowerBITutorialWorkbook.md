@@ -15,21 +15,24 @@ For this tutorial we will use World WIde Importers Dataset which is available wi
 ## Exercise 1 : Data Exploration
 1. DAX query
 2. Fabric "Exploration" item
+
 Go to [exploration tutorial](/PowerBI/workbooks/Exploration.md)
 
 ## Exercise 2 :  Create PowerBI reports
-1. Semantic Model creation
-2. Manual report creation
+1. Manual report creation
+
 Go to [Report creation tutorial](/PowerBI/workbooks/PowerBIManualReport.md)
 
 ## Exercise 3 : Setup Alerts using Activator
 1. Setup alert on PowerBI report
 2. Add conditions
+
 Go to [Activator tutorial](/PowerBI/workbooks/Activator.md)
 
 ## Exercise 4 : Use Copilot
 1. Copilot assited report creation
 2. Chat with your data using copilot
+
 Go to [Copilot tutorial](/PowerBI/workbooks/Copilot.md)
 
 
