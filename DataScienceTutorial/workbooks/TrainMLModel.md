@@ -189,7 +189,7 @@ To view your experiments:
 # mlflow client: mlflow.model.url, list model
 load_model_rfc1_sm = mlflow.sklearn.load_model(f"runs:/{rfc1_sm_run_id}/model")
 load_model_rfc2_sm = mlflow.sklearn.load_model(f"runs:/{rfc2_sm_run_id}/model")
-load_model_lgbm1_sm = mlflow.lightgbm.load_model(f"runs:/{lgbm1_sm_run_id}/model")
+load_model_lgbm1_sm = mlflow.lightgbm.load_model(f"runs:/{lgbm1_sm_run_id}/lgbm_sm")
 # Assess the performance of the loaded model on validation dataset
 ypred_rfc1_sm_v1 = load_model_rfc1_sm.predict(X_val) # Random Forest with max depth of 4 and 4 features
 ypred_rfc2_sm_v1 = load_model_rfc2_sm.predict(X_val) # Random Forest with max depth of 8 and 6 features
@@ -242,6 +242,8 @@ def plot_confusion_matrix(cm, classes,
 ```
  a. Confusion Matrix for Random Forest Classifier with maximum depth of 4 and 4 features
  ```
+ ypred_rfc1_sm_v1 = ypred_rfc1_sm_v1.astype(int)
+
  cfm = confusion_matrix(y_val, y_pred=ypred_rfc1_sm_v1)
 plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
                       title='Random Forest with max depth of 4')
@@ -251,7 +253,8 @@ tn, fp, fn, tp = cfm.ravel()
 
  b. Confusion Matrix for Random Forest Classifier with maximum depth of 8 and 6 features
  ```
- cfm = confusion_matrix(y_val, y_pred=ypred_rfc2_sm_v1)
+ypred_rfc2_sm_v1 = ypred_rfc2_sm_v1.astype(int)
+cfm = confusion_matrix(y_val, y_pred=ypred_rfc2_sm_v1)
 plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
                       title='Random Forest with max depth of 8')
 tn, fp, fn, tp = cfm.ravel()
