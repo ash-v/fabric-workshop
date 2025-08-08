@@ -82,3 +82,5 @@ ORDER BY
     ![alt text](/PowerBI/images/Exploration7.png)
 
 You can continue to explore and learn more about the data. You can also save and share such visual explorations with your colleagues. This is not covered in this tutorial.
+
+Next, you can go to [Report creation tutorial](/PowerBI/workbooks/PowerBIManualReport.md)

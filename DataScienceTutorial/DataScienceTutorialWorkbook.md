@@ -13,9 +13,9 @@ This tutorial places you in the role of a data scientist who must explore, clean
 
 1. Let's start by understanding the [data](/DataScienceTutorial/data/DataDescription.md)
 2. [Setup Lakehouse to store data and manually upload](/DataScienceTutorial/workbooks/LakehouseSetup.md) 
-3. [Explore and clean data using notebook](https://learn.microsoft.com/en-us/fabric/data-science/tutorial-data-science-explore-notebook)
-4. [Train and register a machine learning model](https://learn.microsoft.com/en-us/fabric/data-science/tutorial-data-science-train-models)
-5. [Perform batch scoring and save predictions to a lakehouse](https://learn.microsoft.com/en-us/fabric/data-science/tutorial-data-science-batch-scoring)
+3. [Explore and clean data using notebook](/DataScienceTutorial/workbooks/ExploreAndCleanData.md)
+4. [Train and register a machine learning model](/DataScienceTutorial/workbooks/TrainMLModel.md)
+5. [Perform batch scoring and save predictions to a lakehouse](/DataScienceTutorial/workbooks/BatchScoring.md)
 6. [Visualize predictions with a Power BI report](https://learn.microsoft.com/en-us/fabric/data-science/tutorial-data-science-create-report)
 
 [Here](https://learn.microsoft.com/en-us/fabric/data-science/use-ai-samples) are some additional tutorials.

@@ -21,4 +21,4 @@ Now, you have a Lakehouse created
 5. If you see the csv file inside the sub-folder, then you're good. You may need to refresh the page.
 ![alt text](/DataScienceTutorial/images/uploadData5.png)
 
-Now, you can move to [Explore and clean data using notebook](https://learn.microsoft.com/en-us/fabric/data-science/tutorial-data-science-explore-notebook)
+Now, you can move to [Explore and clean data using notebook](/DataScienceTutorial/workbooks/ExploreAndCleanData.md)

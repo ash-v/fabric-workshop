@@ -19,3 +19,5 @@ You can also rename the alert if you like and also open it in activator.
 you'll see something like below. 
 ![alt text](/PowerBI/images/Activator7.png)
 To trigger the alert you can insert additional data into underlying tables such as that Tailspin Toys Profit grows over $15M. This is not part of the tutorial.
+
+Next, you can go to [Copilot tutorial](/PowerBI/workbooks/Copilot.md)
