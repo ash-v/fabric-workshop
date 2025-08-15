@@ -42,6 +42,8 @@ mlflow.autolog(exclusive=False)
 ```
 
 ### Build ML model
+### Why do this? 
+This is where you train the model on your existing data to predict customer who might be about to leave the bank and why. This information will help you retain the customer by fixing the issues that might be driving the customer away.
 
 1. Import scikit-learn and LightGBM
 ```
@@ -205,6 +207,9 @@ ypred_lgbm1_sm_v2 = lgbm_sm_model.predict(X_val) # LightGBM
 Depending on your preference, either approach is fine and should offer identical performances. In this notebook, you'll choose the first approach in order to better demonstrate the MLflow autologging capabilities in Microsoft Fabric.
 
 ### Confusion Matrix
+### Why do this?
+This section helps build confusion matrices for each model you created. Confusion marix summarizes the performance of a classification model by showing the counts of true positives, false positives, true negatives, and false negatives. With this information you can pick the best model for your task.
+
 Next, you'll develop a script to plot the confusion matrix in order to evaluate the accuracy of the classification using the validation dataset.
 ```
 import seaborn as sns
