@@ -12,7 +12,7 @@ This tutorial places you in the role of a data scientist who must explore, clean
 
 
 1. Let's start by understanding the [data](/DataScienceTutorial/data/DataDescription.md)
-2. [Setup Lakehouse to store data and manually upload](/DataScienceTutorial/workbooks/LakehouseSetup.md) 
+2. [Setup Lakehouse to store data and manually upload](/DataScienceTutorial/workbooks/LakehouseSetup.md). This is a setup step, might need to be completed by IT team.
 3. [Explore and clean data using notebook](/DataScienceTutorial/workbooks/ExploreAndCleanData.md)
 4. [Train and register a machine learning model](/DataScienceTutorial/workbooks/TrainMLModel.md)
 5. [Perform batch scoring and save predictions to a lakehouse](/DataScienceTutorial/workbooks/BatchScoring.md)

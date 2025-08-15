@@ -4,26 +4,13 @@ This section covers two key ways of exploring your data.
 - [Using DAX Queries](#a-using-dax-queries)
 - [Using Fabric Exploration item](#b-using-fabric-exploration-items)
 
-But first we need to create a semantic model. Let's start
-
-## Create Semantic Model
-1. Go to Lakehouse "lh_gold_zone" click on "New Semantic Model" 
-![alt text](/PowerBI/images/SemanticModel1.png)
-2. On the pop-up window, fill in the name of semantic model as "sm_powerbi_tutorial". Select tables as shown in the screenshot below.. and hit "Confirm"
-![alt text](/PowerBI/images/SemanticModel2.png)
-3. When Semantic Model opens up, make following connection by dragging and dropping
- - 3.1 Connect fact_sales table to dimentions_city on city_key by pressing down city_key on dimensions_city table and dragging to over to city_key column on fact_Sales_table. 
- ![alt text](/PowerBI/images/SemanticModel3.png)
- Following screen will appear when you do this... hit "Save"
- ![alt text](/PowerBI/images/SemanticModel4.png)
- - 3.2 Similarly, connect fact_Sales table with dimensions_customer
- ![alt text](/PowerBI/images/SemanticModel5.png)
+You should have a semantic model already created for you in your workspace. All workshop atttendees will read from the same semantic model provded by the IT team.
 
 
 ## A. Using DAX queries
 1. Go to your workspace and click on semantic model
 ![alt text](/PowerBI/images/Exploration1.png)
-2. Once semantic model opens up, click on "Write DAX Query"
+2. Once semantic model console opens up, click on "Write DAX Query"
 ![alt text](/PowerBI/images/Exploration2.png)
 3. Explore data using DAX queries
 - 3.1 Explore 'fact_sale' table
@@ -74,11 +61,13 @@ ORDER BY
     - From table "dimension_city", select column "SalesTerritory"
     - From table "fact_sale", select columns "TotalExcludingTax", "Profit", and "Package"
     - From "Visual", select stacked bar graphs
+    - In case, "Package" shows up as Coluns and not as rows. You should drag and drop "package" column under 
+    ![alt text](/PowerBI/images/Exploration8.png)
     - From "Drill", ensure "Drill up" selected
     - From "Sort", ensure sort axis is "Sum of Profit"
     Should look like below
     ![alt text](/PowerBI/images/Exploration6.png)
-    - Now, click on one of th bars to drill down to package level
+    - Now, click on one of th bars to drill down to package level. If clicking doesn't work, you can right-click on the bars and hit "drill down" to see package level details at the selected Sales Territory
     ![alt text](/PowerBI/images/Exploration7.png)
 
 You can continue to explore and learn more about the data. You can also save and share such visual explorations with your colleagues. This is not covered in this tutorial.

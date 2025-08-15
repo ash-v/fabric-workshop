@@ -14,6 +14,10 @@ The main steps in this tutorial are:
 4. Perform exploratory data analysis using seaborn.
 
 ## Read and Clean data
+
+### Why do this? 
+Data cleaning is required before a data science project to ensure you data properly reflects your use case and its edge cases. This steps helps avoid the *garbage in / garbage out* scenario. 
+
 1. Create a notebook by click on "+ New Item" > "Notebook"
 ![alt text](/DataScienceTutorial/images/ExploreAndCleanData1.png)
 2. Rename the notebook by click on the it's current name, i.e. Notebook1, in top-left corner 
@@ -32,6 +36,7 @@ df = (
 )
 ```
 Note: If you're following the online tutorial, make sure the file path is correct.
+
 6. Create Pandas dataframe from the dataset by running following command in a new cell
 ```
 df = df.toPandas()
@@ -53,6 +58,10 @@ display(df, summary=True)
 ```
 
 ### Use Data Wrangler to perform initial data cleaning
+
+### Why do this? 
+This section teaches you Data Wrangler tool within Fabric which allows you to create data procesing logic without coding. This is a no code solution. If you choose not to use Data Wrangler, there is a code at the end of this section that you can copy and paste in your notebook.
+
 1. Under the notebook ribbon Data tab, select Launch Data Wrangler. You'll see a list of activated pandas DataFrames available for editing.
 2. Select the DataFrame you wish to open in Data Wrangler. Since this notebook only contains one DataFrame, df, select df.
 ![alt text](/DataScienceTutorial/images/DataWrangler1.png)
@@ -102,6 +111,9 @@ df_clean.head()
 This code is similar to the code produced by Data Wrangler, but adds in the argument inplace=True to each of the generated steps. By setting inplace=True, pandas will overwrite the original DataFrame instead of producing a new DataFrame as an output.
 
 ### Explore the data
+### Why do this?  
+This section walks you through various ways to explore and understand nuances within your data. This helps you better understand what kind of processing and calculations you need to perform before you can start training models. This section also helps you gain insight into which algorithms might be best suited for your modeling.
+
 1. Use this code to determine categorical, numerical, and target attributes.
 ```
 # Determine the dependent (target) attribute
@@ -154,7 +166,8 @@ plt.show()
 ![alt text](/DataScienceTutorial/images/DataExploration3.png)
 
 ### Feature Engineering
-Perform feature engineering to generate new attributes based on current attributes:
+### Why do this? 
+Featue engineering is the process of creating new variables or features that you believe will help bubble up insights / patterns. Perform feature engineering to generate new attributes based on current attributes:
 ```
 df_clean['Tenure'] = df_clean['Tenure'].astype(int)
 df_clean["NewTenure"] = df_clean["Tenure"]/df_clean["Age"]
@@ -165,6 +178,9 @@ df_clean["NewEstSalaryScore"] = pd.qcut(df_clean['EstimatedSalary'], 10, labels 
 ```
 
 ### One-hot encoding
+### Why do this? 
+One-hot encoding is used to convert categorical variables into a numerical format that machine learning models can understand, while avoiding any unintended ordinal relationships between categories. In other words, this helps your model to learn from categorical variables as well.
+
 ```
 # This is the same code that Data Wrangler will generate
  
