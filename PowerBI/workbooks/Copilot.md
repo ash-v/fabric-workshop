@@ -47,3 +47,5 @@ It should update the visual to something like below
  ![alt text](/PowerBI/images/Copilot9.png) 
  
  You can continue to ask more question. In general, it's better to start with "Question:" when asking a question versus requesting a visual
+
+You can save the report, by clicking on "File" on top left corner and entering name of the report as "rp_PowerBICopilot_Tutorial". Make sure you're saving in the folder corresponding to your name.
