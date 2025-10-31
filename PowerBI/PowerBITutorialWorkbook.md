@@ -12,6 +12,11 @@ For this tutorial we will use World WIde Importers Dataset which is available wi
 
  Assuming data is already loaded into target Lakehouse. 
 
+## High level architecture diagram
+![alt text](/PowerBI/images/Architecture.png)
+
+<br>
+
 ## Exercise 1 : Data Exploration
 1. DAX query
 2. Fabric "Exploration" item
@@ -34,6 +39,9 @@ Go to [Activator tutorial](/PowerBI/workbooks/Activator.md)
 2. Chat with your data using copilot
 
 Go to [Copilot tutorial](/PowerBI/workbooks/Copilot.md)
+
+
+
 
 
 
