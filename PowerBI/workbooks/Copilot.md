@@ -42,6 +42,14 @@ It should update the visual to something like below
  ```
  ![alt text](/PowerBI/images/Copilot8.png)
 
+ <i>Note: In case, Copilot doesn't give you a link to turn on Q&A for the Semantic Model. Follow below mentioned steps to turn it on manually</i>
+
+ a. Go to "Settings">"Power BI Settings"
+ ![alt text](/PowerBI/images/Copilot10.png)
+
+ b. Turn on Q&A settings as shown below
+ ![alt text](/PowerBI/images/Copilot11.png)
+
  **Note: Copilot might ask you to refresh the page. Make sure you save your report before refreshing the page**
  - Now, copilot answers the question and describes how it arrived at this answer so that you can verify it if you'd like.
  ![alt text](/PowerBI/images/Copilot9.png) 

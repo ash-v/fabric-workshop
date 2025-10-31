@@ -21,34 +21,19 @@ EVALUATE
 ![alt text](/PowerBI/images/Exploration3.png)
 
 
-- 3.2 : Next we have a DAX query that is useful for creating a detailed sales report that combines sales data with related city and customer information.
-    
-    You might use this query to analyze each sale with context about where it happened (city, state, country) and who made the purchase (customer, customer category). 
+- 3.2 : Next we have a DAX query that is useful for creating an aggregated view.
+NOTE : When multiple users fire this query at the same time, depending on the capacity size, it may throw resource error for some users. You can retry in a few seconds and it should work.
 
 ```
-    EVALUATE
-  SELECTCOLUMNS(
-    ADDCOLUMNS(
-      'fact_sale',
-      "City", RELATED('dimension_city'[City]),
-      "StateProvince", RELATED('dimension_city'[StateProvince]),
-      "Country", RELATED('dimension_city'[Country]),
-      "Customer", RELATED('dimension_customer'[Customer]),
-      "CustomerCategory", RELATED('dimension_customer'[Category])
-    ),
-    "SaleKey", [SaleKey],
-    "InvoiceDate", [InvoiceDateKey],
-    "City", [City],
-    "StateProvince", [StateProvince],
-    "Country", [Country],
-    "Customer", [Customer],
-    "CustomerCategory", [CustomerCategory],
-    "Quantity", [Quantity],
-    "UnitPrice", [UnitPrice],
-    "TotalIncludingTax", [TotalIncludingTax]
-  )
-ORDER BY
-  [SaleKey] ASC
+EVALUATE
+SUMMARIZECOLUMNS(
+    'fact_sale'[InvoiceDateKey],
+    "TotalQuantity", SUM('fact_sale'[Quantity]),
+    "AvgUnitPrice", AVERAGE('fact_sale'[UnitPrice]),
+    "TotalIncludingTax", SUM('fact_sale'[TotalIncludingTax])
+)
+ORDER BY 'fact_sale'[InvoiceDateKey]
+
 
 ```
 
